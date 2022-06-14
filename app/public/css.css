@@ -1,0 +1,14 @@
+.container_list {
+    background-color :blueviolet;
+    width : 100vw;
+    height : 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    
+}
+

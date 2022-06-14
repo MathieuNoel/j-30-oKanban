@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+    <div class="container_list">
+        <% for(const list of lists) {%>
+            <div class="list">
+                <div class="list--position"><%= list.position %></div>
+                <h1 class="list--h1"><%= list.name %></h1>
+                <div class="card">
+                    <div class="card--position"><%= list.card.position %></div>
+                    <p class="card_description"><%= list.card.description %></p>
+                </div>
+            </div>
+        <% } %>    
+    </div>
+
+<%- include('partials/footer') %>
