@@ -4,7 +4,7 @@ const Label = require('./label');
 
 List.hasMany(Card, {
   foreignKey: "list_id",
-  as: "card"
+  as: "cards"
 });
 
 Card.belongsTo(List, {

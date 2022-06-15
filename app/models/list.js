@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes} = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../database');
 
-class List extends Sequelize.Model {}
+class List extends Model {}
 
 List.init({
   name: {

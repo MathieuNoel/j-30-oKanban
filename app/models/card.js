@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes} = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../database');
 
-class Card extends Sequelize.Model {};
+class Card extends Model {};
 
 Card.init({
   description: {
