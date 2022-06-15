@@ -8,6 +8,7 @@ Card.init({
   description: DataTypes.TEXT,
   color: DataTypes.TEXT,
   position: DataTypes.SMALLINT,
+  // list_id: DataTypes.INTEGER
 }, {
   sequelize,
   tableName: 'card',
