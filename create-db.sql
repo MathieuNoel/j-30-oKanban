@@ -45,4 +45,28 @@ CREATE TABLE "card_has_label" (
   PRIMARY KEY ("card_id", "label_id") -- on crée une clé composite, une clé composée de plusieurs colonnes, ça garantit l'unicité de la combinaison
 );
 
+-- seeding
+
+INSERT INTO "list" ("name", "position") -- on précise les colonnes qu'on va renseigner
+  VALUES 
+    ('A faire', 10),
+    ('Terminé', 32),
+    ('Important', 58); -- on insère ici plusieurs lignes d'un coup
+
+INSERT INTO "card" ("title", "color", "description", "position", "list_id")
+  VALUES
+    ('Faire les courses', '#f90', 'penser à prendre du pain', 0, 2),
+    ('Apprendre un nouveau langage', 'green', NULL, 1, 2);
+
+INSERT INTO "label" ("title", "color")
+  VALUES 
+    ('urgent', 'red'),
+    ('idée', 'yellow');
+
+INSERT INTO "card_has_label" ("card_id", "label_id")
+  VALUES
+    (1, 1),
+    (2, 1),
+    (2, 2);
+
 COMMIT; -- fin de la transaction
