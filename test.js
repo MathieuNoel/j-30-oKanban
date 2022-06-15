@@ -1,10 +1,12 @@
 require('dotenv').config();
 
-const List = require('./app/models/list');
+const models = require('./app/models');
 
 const doSomeTests = async () => {
   try {
-    const results = await List.findAll();
+    const results = await models.List.findAll({
+      include: 'cards',
+    });
     console.log(results);
   }
   catch (error) {
