@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS "list", "card", "label", "card_has_label";
 
 CREATE TABLE "list" (
   "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  "name" TEXT NOT NULL,
+  "name" VARCHAR(255) NOT NULL,
   "position" SMALLINT NOT NULL DEFAULT 0,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updated_at" TIMESTAMPTZ
@@ -21,9 +21,9 @@ CREATE TABLE "list" (
 
 CREATE TABLE "card" (
   "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  "title" TEXT NOT NULL,
+  "title" VARCHAR(255) NOT NULL,
   "description" TEXT,
-  "color" TEXT,
+  "color" VARCHAR(30),
   "position" SMALLINT NOT NULL DEFAULT 0,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updated_at" TIMESTAMPTZ,
@@ -32,8 +32,8 @@ CREATE TABLE "card" (
 
 CREATE TABLE "label" (
   "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  "title" TEXT NOT NULL,
-  "color" TEXT,
+  "title" VARCHAR(255) NOT NULL,
+  "color" VARCHAR(30),
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   "updated_at" TIMESTAMPTZ
 );
