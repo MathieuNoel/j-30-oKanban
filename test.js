@@ -8,6 +8,10 @@ const doSomeTests = async () => {
       include: 'cards',
     });
     console.log(results);
+    const test = await models.Card.findByPk(1, {
+      include: ['list', 'labels'],
+    });
+    console.log(test);
   }
   catch (error) {
     console.trace(error);
