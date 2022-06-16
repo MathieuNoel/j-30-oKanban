@@ -90,7 +90,7 @@ const getController = {
     }
   },
   cardsOfList: async (req, res) => {
-    const id = +req.params.id
+    const {id} = req.params
     try {
       const cardsByList = await List.findByPk(id, {
         include: {
