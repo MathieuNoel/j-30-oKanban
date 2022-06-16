@@ -33,13 +33,14 @@ const deleteController = {
   },
   removeAssociationFromCard: async (req, res) => {
     try {
-      const {card_id, label_id} = req.params
-      const card = await Card.findByPk(card_id, {include:'labels'})
-      const label = await Label.findByPk(label_id)      
+    const {card_id, label_id} = req.params
+      const card = await Card.findByPk(card_id)
+      const label = await Label.findByPk(label_id) 
+      console.log(card, label)     
       if(card){
         if(label){
-          const modifiedCard = await label.removeLabel(card)
-          res.json(modifiedCard,'deleteted')
+          const modifiedCard = await card.removeLabel(label)
+          res.json(modifiedCard)
         } else {
           res.status(404).json({
             message: 'Le label demandée n\'existe pas',
